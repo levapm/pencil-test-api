@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 export default class Mongoose {
-  connectionURI = `mongodb+srv://pencil_user:pencil_pass@cluster0.t6ri1.mongodb.net/questions_set?retryWrites=true&w=majority&authSource=questions_set`;
+  connectionURI = process.env.DB_URL;
 
   constructor() {
   }

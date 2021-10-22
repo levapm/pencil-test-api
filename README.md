@@ -15,6 +15,12 @@ npm run dev
 
 ```
 
+## Test it
+
+```shell
+#to run test
+npm run test
+
 ## Run It
 #### Run in *development* mode:
 Runs the application is development mode. Should not be used in production
