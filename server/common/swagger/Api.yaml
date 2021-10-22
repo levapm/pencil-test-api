@@ -1,0 +1,88 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: myapp
+  description: My cool Mongoose, Typescript, Express app
+basePath: /api/v1
+tags:
+  - name: Questions
+    description: Simple questions endpoints
+  - name: Specification
+    description: The swagger API specification
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+definitions:
+  QuestionBody:
+    type: object
+    title: question
+    required:
+      - question
+      - anotations
+    properties:
+      question:
+        type: string
+        example: Question 1
+      anotations:
+        type: Array<string>
+        example: ['Wave Particle Duality', 'Heisenberg’s principle']  
+  TopicBody:
+    type: object
+    title: topic
+    required:
+      - name
+      - parents
+    properties:
+      name:
+        type: string
+        example: Wave Particle Duality
+      parents:
+        type: Array<string>
+        example: [ 'Physics' ]        
+
+paths:
+  /questions:
+    get:
+      tags:
+        - Questions
+      description: Fetch all questions
+      responses:
+        200:
+          description: Returns all questions
+  
+  /questions/search:
+    get:
+      tags:
+        - Questions
+      description: Fetch all questions
+      parameters:
+        - name: q
+          in: query
+          required: false
+          description: criteria to search
+          type: string
+      responses:
+        200:
+          description: Returns all questions by criteria        
+
+  /questions/{id}:
+    get:
+      tags:
+        - Questions
+      description: Get an question
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the question to retrieve
+          type: string
+      responses:
+        200:
+          description: Return the question with the specified id
+        404:
+          description: Question not found
+  
