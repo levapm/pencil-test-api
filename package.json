@@ -39,5 +39,6 @@
     "tslint": "^5.11.0",
     "typescript": "^3.1.6"
   },
-  "author": "Carmine DiMascio <cdimascio@gmail.com> (https://github.com/cdimascio)"
+  "source": "Carmine DiMascio <cdimascio@gmail.com> (https://github.com/cdimascio)"
+  "author": "Pavel Manzanares <levapm@gmail.com> (https://github.com/levapm/pencil-test-api)"
 }
